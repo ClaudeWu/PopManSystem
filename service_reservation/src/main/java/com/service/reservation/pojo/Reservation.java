@@ -1,8 +1,6 @@
 package com.service.reservation.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,6 +12,7 @@ import java.util.Date;
 public class Reservation implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer service_id;
     private String type;
     private String state;
