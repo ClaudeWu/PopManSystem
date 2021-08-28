@@ -45,8 +45,8 @@ public class ReservationController {
      * update
      */
     @RequestMapping(value = "/{service_id}", method = RequestMethod.PUT)
-    public Result update(Reservation reservation, @PathVariable Integer id) {
-        reservation.setService_id(id);
+    public Result update(@RequestBody Reservation reservation, @PathVariable Integer service_id) {
+        reservation.setService_id(service_id);
         reservationService.update(reservation);
         return new Result(true, "update successful");
     }
@@ -55,8 +55,8 @@ public class ReservationController {
      * delete
      */
     @RequestMapping(value = "/{service_id}", method = RequestMethod.DELETE)
-    public Result deleteById(Integer id) {
-        reservationService.deleteById(id);
+    public Result deleteById(@PathVariable Integer service_id) {
+        reservationService.deleteById(service_id);
         return new Result(true, "delete successful");
     }
 }
