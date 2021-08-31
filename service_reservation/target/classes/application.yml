@@ -4,7 +4,7 @@ spring:
   application:
     name: service-reservation
   datasource:
-    url: jdbc:mysql://10.0.0.7:3306/docker?characterEncoding=UTF8
+    url: jdbc:mysql://127.0.0.1:3306/docker?characterEncoding=UTF8&verifyServerCertificate=false&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456

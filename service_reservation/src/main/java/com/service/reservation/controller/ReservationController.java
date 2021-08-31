@@ -27,9 +27,9 @@ public class ReservationController {
     /**
      * find one
      */
-    @RequestMapping(value = "/{service_id}", method = RequestMethod.GET)
-    public Result findById(@PathVariable Integer service_id) {
-        return new Result(true, "query is successful", reservationService.findById(service_id));
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Result findById(@PathVariable Integer id) {
+        return new Result(true, "query is successful", reservationService.findById(id));
     }
 
     /**

@@ -13,18 +13,18 @@ public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer service_id;
+    private Integer id;
     private String type;
     private String state;
     private String detail;
-    private Date add_time;
+    private Date addTime;
 
     public Integer getService_id() {
-        return service_id;
+        return id;
     }
 
-    public void setService_id(Integer service_id) {
-        this.service_id = service_id;
+    public void setService_id(Integer id) {
+        this.id = id;
     }
 
     public String getType() {
@@ -51,12 +51,12 @@ public class Reservation implements Serializable {
         this.detail = detail;
     }
 
-    public Date getAdd_time() {
-        return add_time;
+    public Date getAddTime() {
+        return addTime;
     }
 
-    public void setAdd_time(Date add_time) {
-        this.add_time = add_time;
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
     }
 
 }
