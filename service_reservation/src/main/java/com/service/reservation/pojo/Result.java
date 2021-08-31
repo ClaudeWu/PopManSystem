@@ -8,15 +8,12 @@ import java.io.Serializable;
 
 public class Result implements Serializable {
 
-    // successful or not
-    private Boolean flag;
+    // field
+    private Boolean flag;   // successful or not
+    private String message; // message for success or not
+    private Object data;    // the return data
 
-    // message for success or not
-    private String message;
-
-    // the return data
-    private Object data;
-
+    // constructor
     public Result() {
 
     }
@@ -32,6 +29,7 @@ public class Result implements Serializable {
         this.data = data;
     }
 
+    // method
     public Boolean getFlag() {
         return flag;
     }

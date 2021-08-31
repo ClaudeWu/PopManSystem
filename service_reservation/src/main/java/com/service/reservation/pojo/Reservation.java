@@ -11,6 +11,7 @@ import java.util.Date;
 @Table(name = "service_reservation")
 public class Reservation implements Serializable {
 
+    // field
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,6 +20,7 @@ public class Reservation implements Serializable {
     private String detail;
     private Date addTime;
 
+    // method
     public Integer getService_id() {
         return id;
     }
