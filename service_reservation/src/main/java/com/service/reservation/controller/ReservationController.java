@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * reservation controller
+ *
+ * request mapping backup @RequestMapping("/reservation")
  */
 @RestController
-@RequestMapping("/reservation")
+@RequestMapping("/api")
 public class ReservationController {
 
     @Autowired
