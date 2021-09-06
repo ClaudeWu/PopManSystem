@@ -1,14 +1,22 @@
+# -------------------Docker Database Configuration---------------
+# url: jdbc:mysql://127.0.0.1:3306/docker?characterEncoding=UTF8&verifyServerCertificate=false&useSSL=false
+# driver-class-name: com.mysql.jdbc.Driver
+# username: root
+# password: 123456
+
 server:
   port: 9001
 spring:
   application:
     name: service-reservation
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/docker?characterEncoding=UTF8&verifyServerCertificate=false&useSSL=false
-    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://aws-popmansystem.cyyobedf4hm2.us-east-1.rds.amazonaws.com:3306/popmansystem?verifyServerCertificate=false&useSSL=false
     username: root
-    password: 123456
+    password: popman123
   jpa:
     database: mysql
     show-sql: true
     generate-ddl: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hiberate:
+      ddl-auto: create
