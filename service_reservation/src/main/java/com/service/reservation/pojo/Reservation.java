@@ -16,10 +16,11 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String type;
-    private String state;
+    // private String state;
     private String detail;
     private Date addTime;
 
+    private ReservationState state;
     // method
     public Integer getService_id() {
         return id;
@@ -37,11 +38,11 @@ public class Reservation implements Serializable {
         this.type = type;
     }
 
-    public String getState() {
+    public ReservationState getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(ReservationState state) {
         this.state = state;
     }
 
