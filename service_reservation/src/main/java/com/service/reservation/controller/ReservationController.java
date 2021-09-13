@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
  *
  * request mapping backup @RequestMapping("/reservation")
  */
+
 @RestController
 @RequestMapping("/api")
 public class ReservationController {
@@ -46,9 +47,9 @@ public class ReservationController {
     /**
      * update
      */
-    @RequestMapping(value = "/{service_id}", method = RequestMethod.PUT)
-    public Result update(@RequestBody Reservation reservation, @PathVariable Integer service_id) {
-        reservation.setService_id(service_id);
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public Result update(@RequestBody Reservation reservation, @PathVariable Integer id) {
+        reservation.setId(id);
         reservationService.update(reservation);
         return new Result(true, "update successful");
     }

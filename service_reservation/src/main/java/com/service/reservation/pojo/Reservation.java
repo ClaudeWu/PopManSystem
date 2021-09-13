@@ -2,6 +2,7 @@ package com.service.reservation.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -16,17 +17,16 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String type;
-    // private String state;
     private String detail;
     private Date addTime;
-
     private ReservationState state;
+
     // method
-    public Integer getService_id() {
+    public Integer getId() {
         return id;
     }
 
-    public void setService_id(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
