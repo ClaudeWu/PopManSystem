@@ -66,7 +66,6 @@ class ReservationControllerTest {
         reservation.setDetail("The light of living room was not working.");
 
         when(reservationService.findById(reservation.getId())).thenReturn(reservation);
-
         Result result = underTest.findById(reservation.getId());
 
         Assert.assertEquals(result.getFlag(), true);

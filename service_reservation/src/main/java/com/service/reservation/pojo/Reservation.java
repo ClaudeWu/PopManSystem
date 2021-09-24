@@ -18,7 +18,7 @@ public class Reservation implements Serializable {
     private String type;
     private String detail;
     private Date addTime;
-    private ReservationState state;
+    private ReservationStateImpl state;
 
     // method
     public Integer getId() {
@@ -37,11 +37,11 @@ public class Reservation implements Serializable {
         this.type = type;
     }
 
-    public ReservationState getState() {
+    public ReservationStateImpl getState() {
         return state;
     }
 
-    public void setState(ReservationState state) {
+    public void setState(ReservationStateImpl state) {
         this.state = state;
     }
 
