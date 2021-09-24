@@ -30,7 +30,7 @@ public class ReservationController {
     /**
      * find one
      */
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public Result findById(@PathVariable Integer id) {
         return new Result(true, "query is successful", reservationService.findById(id));
     }
@@ -47,7 +47,7 @@ public class ReservationController {
     /**
      * update
      */
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @RequestMapping( method = RequestMethod.PUT, value = "/{id}")
     public Result update(@RequestBody Reservation reservation, @PathVariable Integer id) {
         reservation.setId(id);
         reservationService.update(reservation);
@@ -57,7 +57,7 @@ public class ReservationController {
     /**
      * delete
      */
-    @RequestMapping(value = "/{service_id}", method = RequestMethod.DELETE)
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{service_id}")
     public Result deleteById(@PathVariable Integer service_id) {
         reservationService.deleteById(service_id);
         return new Result(true, "delete successful");

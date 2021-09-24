@@ -1,7 +1,7 @@
 package com.service.reservation.controller;
 
 import com.service.reservation.pojo.Reservation;
-import com.service.reservation.pojo.ReservationState;
+import com.service.reservation.pojo.ReservationStateImpl;
 import com.service.reservation.pojo.Result;
 import com.service.reservation.service.ReservationServiceImpl;
 import org.junit.Assert;
@@ -39,12 +39,12 @@ class ReservationControllerTest {
         reservation.setId(1);
         reservation.setAddTime(new Date());
         reservation.setType("Hardware Replacement");
-        reservation.setState(ReservationState.FINISHED);
+        reservation.setState(ReservationStateImpl.RESERVED);
         reservation.setDetail("The light of living room was not working.");
 
         List<Reservation> testDate = new ArrayList<>();
         testDate.add(reservation);
-        // when
+
         when(reservationService.findAll()).thenReturn(testDate);
         Result result = underTest.findAll();
 
@@ -62,7 +62,7 @@ class ReservationControllerTest {
         reservation.setId(1);
         reservation.setAddTime(new Date());
         reservation.setType("Hardware Replacement");
-        reservation.setState(ReservationState.FINISHED);
+        reservation.setState(ReservationStateImpl.RESERVED);
         reservation.setDetail("The light of living room was not working.");
 
         when(reservationService.findById(reservation.getId())).thenReturn(reservation);
@@ -83,7 +83,7 @@ class ReservationControllerTest {
         reservation.setId(1);
         reservation.setAddTime(new Date());
         reservation.setType("Hardware Replacement");
-        reservation.setState(ReservationState.FINISHED);
+        reservation.setState(ReservationStateImpl.RESERVED);
         reservation.setDetail("The light of living room was not working.");
 
         Result result = underTest.add(reservation);
@@ -101,7 +101,7 @@ class ReservationControllerTest {
         reservation.setId(1);
         reservation.setAddTime(new Date());
         reservation.setType("Hardware Clean");
-        reservation.setState(ReservationState.PROCESSING);
+        reservation.setState(ReservationStateImpl.FULFILLED);
         reservation.setDetail("The light of living room was not working.");
 
         Result result = underTest.update(reservation, reservation.getId());
@@ -119,7 +119,7 @@ class ReservationControllerTest {
         reservation.setId(1);
         reservation.setAddTime(new Date());
         reservation.setType("Hardware Replacement");
-        reservation.setState(ReservationState.FINISHED);
+        reservation.setState(ReservationStateImpl.CLOSED);
         reservation.setDetail("The light of living room was not working.");;
 
         Result result = underTest.deleteById(reservation.getId());
